@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>線上客服 - 麥可曼尼</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0a0f1c;
+      color: white;
+    }
+
+    .topbar {
+      background-color: #bc8844;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+
+    .topbar img {
+      height: 40px;
+    }
+
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #bc8844;
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: #bc8844;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a86f32;
+    }
+
+    .response {
+      margin-top: 30px;
+      color: #bc8844;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <img src="logo_text.png" alt="麥可曼尼" />
+    <div><a href="index.html" style="color:white; text-decoration:none;">回首頁</a></div>
+  </div>
+
+  <div class="container">
+    <h1>線上客服</h1>
+      <p>請上傳您的匯款憑證圖片，客服將盡快為您核實並解鎖帳號。</p>
+    
+    <input type="file" id="fileUpload" accept="image/*">
+    <br>
+    <button onclick="submitProof()">上傳憑證</button>
+
+    <div class="response" id="responseMessage">憑證已送出，待核實後將解鎖帳號。</div>
+  </div>
+
+  <script>
+    function submitProof() {
+      const fileInput = document.getElementById('fileUpload');
+      const response = document.getElementById('responseMessage');
+
+      if (fileInput.files.length === 0) {
+        alert("請選擇要上傳的圖片檔案！");
+        return;
+      }
+
+      // 模擬回覆訊息
+      response.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

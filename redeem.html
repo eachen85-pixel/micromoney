@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>基金贖回</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0a0f1c;
+      color: white;
+    }
+
+    .topbar {
+      background-color: #bc8844;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+
+    .topbar img {
+      height: 40px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #1a1f2c;
+      border-radius: 8px;
+    }
+
+    h1 {
+      color: #bc8844;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: none;
+      background-color: #2c3240;
+      color: white;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #bc8844;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #f5c58c;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <img src="logo_text.png" alt="麥可曼尼" />
+    <div>
+      <a href="index.html" style="color:white; text-decoration:none;">登出</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>基金贖回</h1>
+
+    <label for="fund">選擇基金</label>
+    <select id="fund" onchange="calculateUnits()">
+      <option value="">請選擇</option>
+       <option value="3581">ARK Innovation ETF（ARKK）</option>
+      <option value="2814">Invesco QCJ Trust（QCJ）</option>
+      <option value="12220">Vanguard S&P 500 ETF（VOT）</option>
+      <option value="5320">Educate Tend ETF（ETJK）</option>
+      <option value="7645">Treasure Uni（TUPC）</option>
+      <option value="4178">Island Engineer ETF（IER）</option>
+      <option value="6150">Material Carry ETF（MCHT）</option>
+      <option value="8993">Jet computer（JCKK）</option>
+      <option value="3014">Tiger Global Equity（TGEQ）</option>
+      <option value="4639">Neural Network Fund（NNF）</option>
+      <option value="8267">Skyline Growth（SKY）</option>
+      <option value="3840">Digital Motion Fund（DMF）</option>
+      <option value="4487">Cloud Vision ETF（CVET）</option>
+      <option value="7353">NextEra AI Fund（NAIF）</option>
+      <option value="5528">Quantum Edge ETF（QETF）</option>
+      <option value="926">Future Vision Growth（FVG）</option>
+      <option value="2661">OceanWide Tech（OWT）</option>
+      <option value="3493">Green Valley Fund（GVF）</option>
+      <option value="4938">Health Sync ETF（HSE）</option>
+      <option value="5794">Urban Logic Fund（ULF）</option>
+      <option value="8108">Phoenix Capital（PHX）</option>
+      <option value="3678">Redwood Tech Growth（RTG）</option>
+      <option value="4362">BridgeLink ETF（BLK）</option>
+      <option value="7789">Solar Future Fund（SFF）</option>
+      <option value="9021">MetaX ETF（MXE）</option>
+      <option value="3320">Nova Infinity（NVI）</option>
+      <option value="6060">HyperEdge Capital（HEC）</option>
+      <option value="7942">Infinity Data Fund（IDF）</option>
+      <option value="6853">Lighthouse Innovation（LHI）</option>
+      <option value="3991">Broadstream ETF（BSE）</option>
+    </select>
+
+    <label for="amount">贖回金額（台幣）</label>
+    <input type="number" id="amount" oninput="calculateUnits()" placeholder="請輸入贖回金額" />
+
+    <div class="result" id="result"></div>
+
+    <button onclick="location.href='redeem_done.html'">確認贖回</button>
+  </div>
+
+  <script>
+    function calculateUnits() {
+      const price = parseFloat(document.getElementById("fund").value);
+      const amount = parseFloat(document.getElementById("amount").value);
+      const result = document.getElementById("result");
+
+      if (!isNaN(price) && !isNaN(amount)) {
+        const units = (amount / price).toFixed(2);
+        result.textContent = `預估贖回單位：${units} 單位`;
+      } else {
+        result.textContent = "";
+      }
+    }
+  </script>
+</body>
+</html>

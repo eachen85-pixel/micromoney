@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>麥可曼尼 | Michael Money</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0a0f1c;
+    }
+
+    header {
+      background-color: #bc8844;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 100px);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #f5c58c;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      background-color: #bc8844;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #f5c58c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo_text.png" alt="麥可曼尼 Logo">
+    <nav>
+      <a href="login_blocked.html">登入</a>
+      <a href="register.html">註冊</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>歡迎來到麥可曼尼投資平台</h1>
+    <p>請選擇登入或註冊帳號以開始使用平台功能。</p>
+    <div>
+      <button class="btn" onclick="location.href='login_blocked.html'">登入</button>
+      <button class="btn" onclick="location.href='register.html'">註冊</button>
+    </div>
+  </main>
+
+</body>
+</html>

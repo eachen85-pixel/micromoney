@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>登入帳號 | 麥可曼尼</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0a0f1c;
+    }
+
+    header {
+      background-color: #bc8844;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 60px auto;
+      background-color: #292d38;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #f5c58c;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #c9c9c9;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .btn {
+      width: 106%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #bc8844;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #f5c58c;
+    }
+
+    .back {
+      color: #c9c9c9;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back a {
+      color: #bc8844;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo_text.png" alt="麥可曼尼 Logo" />
+    <nav>
+      <a href="index.html">回首頁</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>登入帳號</h2>
+    <form onsubmit="event.preventDefault(); location.href='overview.html';">
+      <label for="username">帳號</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">密碼</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit" class="btn">登入</button>
+    </form>
+
+    <div class="back">
+      尚未註冊？<a href="register.html">註冊帳號</a>
+    </div>
+  </div>
+
+</body>
+</html>
